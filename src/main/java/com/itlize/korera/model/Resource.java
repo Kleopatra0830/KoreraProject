@@ -26,14 +26,19 @@ public class Resource {
     @Column(name = "category", length = 50)
     private String category;
 
-    @OneToOne(mappedBy = "resource", cascade = CascadeType.ALL)
-    private ResourceDetail resourceDetail;
+    @OneToMany(mappedBy = "resource", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ResourceDetail> resourceDetails;
 
     @OneToMany(mappedBy = "resource", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ProjectResource> projectResources;
 
 
     // Getters and Setters
+    public void addResourceDetail(ResourceDetail detail) {
+        resourceDetails.add(detail);
+        detail.setResource(this);
+    }
+    
     public Long getResourceId() {
         return resourceId;
     }
@@ -82,12 +87,12 @@ public class Resource {
         this.category = category;
     }
 
-    public ResourceDetail getResourceDetail() {
-        return resourceDetail;
+    public List<ResourceDetail> getResourceDetails() {
+        return resourceDetails;
     }
 
-    public void setResourceDetail(ResourceDetail resourceDetail) {
-        this.resourceDetail = resourceDetail;
+    public void setResourceDetails(List<ResourceDetail> resourceDetails) {
+        this.resourceDetails = resourceDetails;
     }
 
     public List<ProjectResource> getProjectResources() {

@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TemplateRepository extends JpaRepository<Template, Long> {
     // List<Template> findBtemplateName(String name);
-    // List<Template> findByProjectId(Long projectId);
+    // List<Template> findByProject_Id(Long project_id);
 }

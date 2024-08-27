@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProjectServiceImpl implements ProjectService {
@@ -26,22 +27,34 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public Project updateProject(Long id, Project project) {
-        Project existingProject = projectRepository.findById(id).orElseThrow(() -> new RuntimeException("Project not found"));
-        existingProject.setDescription(project.getDescription());
-        existingProject.setProjectCode(project.getProjectCode());
-        existingProject.setProjectName(project.getProjectName());
-        existingProject.setUser(project.getUser());
+        Project existingProject = projectRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Project not found"));
+    
+        // Update fields only if they are provided in the request
+        if (project.getDescription() != null) {
+            existingProject.setDescription(project.getDescription());
+        }
+        if (project.getProjectCode() != 0) {  // Assuming 0 is not a valid code, and we don't want to update if the code is 0
+            existingProject.setProjectCode(project.getProjectCode());
+        }
+        if (project.getProjectName() != null) {
+            existingProject.setProjectName(project.getProjectName());
+        }
+        if (project.getUser() != null) {
+            existingProject.setUser(project.getUser());
+        }
+    
         return projectRepository.save(existingProject);
     }
-
+    
     @Override
     public void deleteProject(Long id) {
         projectRepository.deleteById(id);
     }
 
     @Override
-    public Project getProjectById(Long id) {
-        return projectRepository.findById(id).orElseThrow(() -> new RuntimeException("Project not found"));
+    public Optional<Project> getProjectById(Long id) {
+        return projectRepository.findById(id);
     }
 
     @Override

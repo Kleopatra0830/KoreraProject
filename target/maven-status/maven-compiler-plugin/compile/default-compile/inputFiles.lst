@@ -1,5 +1,6 @@
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/repository/ProjectRepository.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/model/Template.java
+/Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/service/impl/TemplateServiceImpl.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/service/UserService.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/service/impl/ProjectServiceImpl.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/repository/ResourceDetailRepository.java
@@ -8,6 +9,7 @@
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/service/impl/ResourceServiceImpl.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/model/User.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/controller/ProjectResourceController.java
+/Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/service/ResourceDetailService.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/repository/UserRepository.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/KoreraApplication.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/service/impl/UserServiceImpl.java
@@ -19,8 +21,12 @@
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/service/ProjectResourceService.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/controller/ResourceController.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/controller/UserController.java
+/Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/controller/TemplateController.java
+/Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/service/TemplateService.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/repository/ResourceRepository.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/model/Resource.java
+/Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/controller/ResourceDetailController.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/service/ResourceService.java
+/Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/service/impl/ResourceDetailServiceImpl.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/model/ResourceDetail.java
 /Users/xiaoweiwu/Documents/ITLIZE Training/Week6/koreraV3/src/main/java/com/itlize/korera/model/ProjectResource.java

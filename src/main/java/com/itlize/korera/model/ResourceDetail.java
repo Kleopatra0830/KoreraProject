@@ -22,8 +22,8 @@ public class ResourceDetail {
     @Column(name = "detail_value", length = 255)
     private String detailValue;
 
-    @OneToOne
-    @JoinColumn(name = "resource_id")
+    @ManyToOne
+    @JoinColumn(name = "resource_id", nullable = false)
     private Resource resource;
 
     @ManyToOne

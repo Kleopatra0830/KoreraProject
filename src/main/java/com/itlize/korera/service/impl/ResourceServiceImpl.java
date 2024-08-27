@@ -1,12 +1,15 @@
 package com.itlize.korera.service.impl;
 
 import com.itlize.korera.model.Resource;
+import com.itlize.korera.model.ResourceDetail;
 import com.itlize.korera.repository.ResourceRepository;
 import com.itlize.korera.service.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ResourceServiceImpl implements ResourceService {
@@ -15,7 +18,14 @@ public class ResourceServiceImpl implements ResourceService {
     private ResourceRepository resourceRepository;
 
     @Override
+    @Transactional
     public Resource createResource(Resource resource) {
+        // Link each ResourceDetail to the Resource
+        // for (ResourceDetail detail : resource.getResourceDetails()) {
+        //     detail.setResource(resource);
+        // }
+        
+        // Save the Resource, which will cascade the save to ResourceDetails
         return resourceRepository.save(resource);
     }
 
@@ -36,8 +46,8 @@ public class ResourceServiceImpl implements ResourceService {
     }
 
     @Override
-    public Resource getResourceById(Long id) {
-        return resourceRepository.findById(id).orElseThrow(() -> new RuntimeException("Resource not found"));
+    public Optional<Resource> getResourceById(Long id) {
+        return resourceRepository.findById(id);
     }
 
     @Override

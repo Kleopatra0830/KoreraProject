@@ -45,9 +45,9 @@ public class ProjectController {
     // Get a Project by ID
     @GetMapping("/read/{id}")
     public ResponseEntity<Project> getProjectById(@PathVariable Long id) {
-        Project project = projectService.getProjectById(id);
+        Optional<Project> project = projectService.getProjectById(id);
         if (project != null) {
-            return new ResponseEntity<>(project, HttpStatus.OK);
+            return new ResponseEntity<>(project.get(), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -71,18 +71,20 @@ public class ProjectController {
         return new ResponseEntity<>(projects, HttpStatus.OK);
     }
 
-    // // Update an existing Project
-    // @PutMapping("/update/{id}")
-    // public ResponseEntity<Project> updateProject(@PathVariable Long id, @RequestBody Project project) {
-    //     Optional<Project> existingProject = projectService.getProjectById(id);
-    //     if (existingProject.isPresent()) {
-    //         Project updatedProject = projectService.updateProject(id, project);
-    //         return new ResponseEntity<>(updatedProject, HttpStatus.OK);
-    //     } else {
-    //         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    //     }
-    // }
+    // Update an existing Project
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Project> updateProject(@PathVariable Long id, @RequestBody Project updatedProject) {
+        Optional<Project> existingProject = projectService.getProjectById(id);
+        if (existingProject.isPresent()) {
+            Project updated = projectService.updateProject(id, updatedProject);
+            return new ResponseEntity<>(updated, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
+
+    
     // Delete a Project
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteProject(@PathVariable Long id) {

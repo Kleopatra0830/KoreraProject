@@ -7,7 +7,7 @@ import com.itlize.korera.service.JwtTokenService;
 import com.itlize.korera.service.UserService;
 import com.itlize.korera.service.impl.ProjectServiceImpl;
 
-import javafx.beans.binding.When;
+// import javafx.beans.binding.When;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
